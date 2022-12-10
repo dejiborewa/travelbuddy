@@ -2,7 +2,7 @@ import { Icon } from "@iconify/react";
 import { useRouter } from "next/router";
 import { FormEvent, useState } from "react";
 import Button from "../components/buttons/button";
-import Heading from "../components/heading";
+import Heading from "../components/heading/heading";
 import Input from "../components/input/input";
 import Main from "../layout/main/main";
 import { User } from "../public/icons/user";

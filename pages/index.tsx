@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
-import Button from "../components/buttons";
+import Button from "../components/buttons/button";
 import Meta from "../templates/meta";
 import Friends from "../components/friends/friends";
-import Heading from "../components/heading";
+import Heading from "../components/heading/heading";
 import Intro from "../layout/intro/intro";
 
 export default function Home() {

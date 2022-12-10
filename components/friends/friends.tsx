@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import { friendList } from '../../utils/contants';
+import Image from "next/image";
+import { friendList } from "../../utils/contants";
 
 const Friends = () => {
   return (
