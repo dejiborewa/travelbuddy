@@ -1,5 +1,11 @@
+import Secondary from "../layout/secondary/secondary";
+
 const Welcome = () => {
-  return <div></div>;
+  return (
+    <Secondary backgroundImage="bg-welcome">
+      <div></div>
+    </Secondary>
+  );
 };
 
 export default Welcome;

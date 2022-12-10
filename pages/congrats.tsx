@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
-import { useState } from "react";
+import { useRouter } from "next/router";
+import { FormEvent, useState } from "react";
 import Button from "../components/buttons/button";
 import Heading from "../components/heading";
 import Input from "../components/input/input";
@@ -11,7 +12,12 @@ const Congrats = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
-  const handleSubmit = () => {};
+  const router = useRouter();
+
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault();
+    router.push("/welcome");
+  };
 
   return (
     <>

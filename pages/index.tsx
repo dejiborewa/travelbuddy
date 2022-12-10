@@ -3,7 +3,7 @@ import Button from "../components/buttons";
 import Meta from "../templates/meta";
 import Friends from "../components/friends/friends";
 import Heading from "../components/heading";
-import Intro from "../layout/intro";
+import Intro from "../layout/intro/intro";
 
 export default function Home() {
   const router = useRouter();

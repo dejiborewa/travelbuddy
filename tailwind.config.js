@@ -17,6 +17,10 @@ module.exports = {
       },
       boxShadow: {
         grey: "0px 2px 4px rgba(0, 0, 0, 0.16)"
+      },
+      backgroundImage: {
+        welcome: "url('../public/images/welcome.png')",
+        home: "url  ('../public/images/home.png')"
       }
     }
   },
