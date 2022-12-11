@@ -8,7 +8,7 @@ const Secondary: FC<PropsWithChildren<SecondaryPropsType>> = ({
 }) => {
   return (
     <section className={`${backgroundImage} ${styles.base}`}>
-      <section className="bg-white absolute z-5">{children}</section>
+      {children}
     </section>
   );
 };
