@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 import Button from "../components/buttons/button";
 import Meta from "../templates/meta";
 import Friends from "../components/friends/friends";
@@ -8,7 +9,11 @@ import Intro from "../layout/intro/intro";
 export default function Home() {
   const router = useRouter();
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0, x: -5 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <Meta>
         <title>Login | TravelBuddy</title>
       </Meta>
@@ -40,6 +45,6 @@ export default function Home() {
           />
         </section>
       </Intro>
-    </>
+    </motion.div>
   );
 }

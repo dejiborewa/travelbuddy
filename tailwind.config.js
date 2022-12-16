@@ -11,18 +11,22 @@ module.exports = {
         primary: "#1E8572",
         btnHover: "#249D87",
         yellow: "#F5C841",
-        grey: "#B5B6B6"
+        grey: "#B5B6B6",
+        green: "#176455",
+        darkGrey: "#6D6D6D"
       },
       fontFamily: {
         mukta: ["Mukta", "sans-serif"],
         noto: ["Noto Serif", "serif"]
       },
       boxShadow: {
-        grey: "0px 2px 4px rgba(0, 0, 0, 0.16)"
+        grey: "0px 2px 4px rgba(0, 0, 0, 0.16)",
+        red: "0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3);"
       },
       backgroundImage: {
         welcome: "url('../public/images/welcome.png')",
-        home: "url  ('../public/images/home.png')"
+        home: "url('../public/images/home.png')",
+        invite: "url('../public/images/withFriends.png')"
       }
     }
   },
