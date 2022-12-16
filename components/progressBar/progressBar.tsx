@@ -5,17 +5,17 @@ const ProgressBar: FC<ProgressBarProps> = ({ state }) => {
   return (
     <div className="flex justify-center mt-6 gap-2">
       <div
-        className={`bg-grey w-[34px] h-[14px] rounded-[7px] ${
+        className={`bg-grey w-[34px] h-[14px] rounded-[7px] cursor-pointer ${
           state === 1 ? "bg-yellow w-[76px] h-[14px}" : ""
         }`}
       ></div>
       <div
-        className={`bg-grey w-[34px] h-[14px] rounded-[7px] ${
+        className={`bg-grey w-[34px] h-[14px] rounded-[7px] cursor-pointer  ${
           state === 2 ? "bg-yellow w-[76px] h-[14px}" : ""
         }`}
       ></div>
       <div
-        className={`bg-grey w-[34px] h-[14px] rounded-[7px] ${
+        className={`bg-grey w-[34px] h-[14px] rounded-[7px] cursor-pointer ${
           state === 3 ? "bg-yellow w-[76px] h-[14px}" : ""
         }`}
       ></div>
