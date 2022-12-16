@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import Secondary from "../layout/secondary/secondary";
 import Heading from "../components/heading/heading";
 import Input from "../components/input/input";
@@ -7,6 +7,12 @@ import Button from "../components/buttons/button";
 const Welcome = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    console.log(name, email);
+  };
+
   return (
     <Secondary backgroundImage="bg-welcome">
       <section className="absolute bottom-0 bg-white w-full px-6 pt-6 pb-12 rounded-t-[70px]">
@@ -16,7 +22,7 @@ const Welcome = () => {
           </span>
         </div>
         <Heading className="text-center mt-4">Welcome to TravelBuddy</Heading>
-        <form>
+        <form onSubmit={handleSubmit}>
           <Input
             placeholder="Your name"
             value={name}

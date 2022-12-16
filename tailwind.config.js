@@ -9,7 +9,9 @@ module.exports = {
     extend: {
       colors: {
         primary: "#1E8572",
-        btnHover: "#249D87"
+        btnHover: "#249D87",
+        yellow: "#F5C841",
+        grey: "#B5B6B6"
       },
       fontFamily: {
         mukta: ["Mukta", "sans-serif"],

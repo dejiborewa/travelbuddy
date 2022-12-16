@@ -16,7 +16,7 @@ const Congrats = () => {
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
-    router.push("/welcome");
+    router.push("/onboarding");
   };
 
   return (
