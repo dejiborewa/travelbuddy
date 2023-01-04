@@ -6,7 +6,7 @@ import Button from "../components/buttons/button";
 import Heading from "../components/heading/heading";
 import Input from "../components/input/input";
 import Main from "../layout/main/main";
-import { User } from "../public/icons/user";
+import User from "../public/icons/user";
 import Meta from "../templates/meta";
 
 const Congrats = () => {

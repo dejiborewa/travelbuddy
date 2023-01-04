@@ -4,12 +4,10 @@ import SecondaryPropsType from "./secondary.props";
 
 const Secondary: FC<PropsWithChildren<SecondaryPropsType>> = ({
   children,
-  backgroundImage
+  className
 }) => {
   return (
-    <section className={`${backgroundImage} ${styles.base}`}>
-      {children}
-    </section>
+    <section className={`${styles.base} ${className}`}>{children}</section>
   );
 };
 

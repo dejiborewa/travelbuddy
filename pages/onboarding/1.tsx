@@ -20,7 +20,7 @@ const Onboarding = () => {
           <div className="flex justify-end">
             <p
               className="w-max cursor-pointer text-[#6D6D6D]"
-              onClick={() => router.push("/invite")}
+              onClick={() => router.push("/onboarding/2")}
             >
               Skip
             </p>
@@ -32,11 +32,7 @@ const Onboarding = () => {
           <div className="grid grid-cols-2 gap-x-4 gap-y-6">
             {interestingPlaces.map((data, index) => (
               <React.Fragment key={index}>
-                <Location
-                  name={data.name}
-                  distance={data.distance}
-                  image={data.image}
-                />
+                <Location locationData={data} />
               </React.Fragment>
             ))}
           </div>

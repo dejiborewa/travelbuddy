@@ -19,7 +19,7 @@ const Welcome = () => {
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Secondary backgroundImage="bg-welcome">
+      <Secondary className="bg-welcome h-screen">
         <section className="absolute bottom-0 bg-white w-full px-6 pt-6 pb-12 rounded-t-[70px]">
           <div className=" relative w-[98px] h-[98px] mx-auto rounded-full bg-[#eae2b7]">
             <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-mukta font-[700]">

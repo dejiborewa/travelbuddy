@@ -1,4 +1,4 @@
-export const User = (
+const User = (
   <svg
     width="40"
     height="40"
@@ -22,3 +22,5 @@ export const User = (
     />
   </svg>
 );
+
+export default User;

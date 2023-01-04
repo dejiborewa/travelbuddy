@@ -1,0 +1,19 @@
+import type { SingleValue } from "react-select";
+
+export interface Option {
+  value: string;
+  label: string;
+}
+
+interface DropdownProps {
+  options: Option[];
+  textColor?: string;
+  border?: string;
+  background?: string;
+  placeholder: string;
+  fontWeight?: number;
+  fontSize?: string;
+  onChange?: (value: SingleValue<Option>) => void;
+}
+
+export default DropdownProps;

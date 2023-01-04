@@ -1,4 +1,4 @@
-import LocationProps from "../components/location/location.props";
+import { LocationData } from "../components/location/location.props";
 import friend1 from "../public/images/friend1.png";
 import friend2 from "../public/images/friend2.png";
 import friend3 from "../public/images/friend3.png";
@@ -24,11 +24,22 @@ const friendList = [
   }
 ];
 
-const interestingPlaces: LocationProps[] = [
+const interestingPlaces: LocationData[] = [
   { image: sample1, name: "Chrysler Building", distance: "400km away" },
   { image: sample2, name: "Santa Monica", distance: "826km away" },
   { image: sample1, name: "Chrysler Building", distance: "400km away" },
   { image: sample2, name: "Santa Monica", distance: "826km away" }
 ];
 
-export { friendList, interestingPlaces };
+const interestingPlaces2: LocationData[] = [
+  { image: sample1, name: "Chrysler Building", distance: "400km away" },
+  { image: sample2, name: "Santa Monica", distance: "826km away" },
+  { image: sample1, name: "Chrysler Building", distance: "400km away" }
+];
+
+const countries = [
+  { label: "France", value: "france" },
+  { label: "USA", value: "usa" }
+];
+
+export { countries, friendList, interestingPlaces, interestingPlaces2 };
