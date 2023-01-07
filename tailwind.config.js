@@ -24,7 +24,9 @@ module.exports = {
         grey: "0px 2px 4px rgba(0, 0, 0, 0.16)",
         red: "0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3)",
         lightgrey:
-          "0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.3)"
+          "0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.3)",
+        tripcard:
+          "0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.3)"
       },
       backgroundImage: {
         welcome: "url('../public/images/welcome.png')",

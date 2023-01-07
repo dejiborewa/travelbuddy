@@ -1,13 +1,15 @@
 import { useRouter } from "next/router";
+
 import { motion } from "framer-motion";
-import Button from "../components/buttons/button";
-import Meta from "../templates/meta";
 import Friends from "../components/friends/friends";
 import Heading from "../components/heading/heading";
 import Intro from "../layout/intro/intro";
+import Button from "../components/buttons/button";
+import Meta from "../templates/meta";
 
 export default function Home() {
   const router = useRouter();
+
   return (
     <motion.div
       initial={{ opacity: 0, x: -5 }}
@@ -38,6 +40,7 @@ export default function Home() {
               <p>Join now to begin planning!</p>
             </div>
           </div>
+
           <Button
             text="Accept and join the trip"
             onClick={() => router.push("/congrats")}

@@ -7,6 +7,7 @@ import Add from "../components/add/add";
 
 const Invite = () => {
   const router = useRouter();
+
   return (
     <motion.div
       initial={{ opacity: 0, x: -5 }}

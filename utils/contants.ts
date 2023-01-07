@@ -4,6 +4,8 @@ import friend2 from "../public/images/friend2.png";
 import friend3 from "../public/images/friend3.png";
 import sample1 from "../public/images/sample1.png";
 import sample2 from "../public/images/sample2.png";
+import TripImage from "../public/images/trip.png";
+import TripType from "../types/trip.type";
 
 const friendList = [
   {
@@ -42,4 +44,43 @@ const countries = [
   { label: "USA", value: "usa" }
 ];
 
-export { countries, friendList, interestingPlaces, interestingPlaces2 };
+const trips: TripType[] = [
+  {
+    startDate: new Date(),
+    endDate: new Date(),
+    image: TripImage,
+    name: "Trip to New York with Friends"
+  },
+  {
+    startDate: new Date(),
+    endDate: new Date(),
+    image: TripImage,
+    name: "Trip to New York with Friends"
+  },
+  {
+    startDate: new Date(),
+    endDate: new Date(),
+    image: TripImage,
+    name: "Trip to New York with Friends"
+  },
+  {
+    startDate: new Date(),
+    endDate: new Date(),
+    image: TripImage,
+    name: "Trip to New York with Friends"
+  },
+  {
+    startDate: new Date(),
+    endDate: new Date(),
+    image: TripImage,
+    name: "Trip to New York with Friends"
+  },
+  {
+    startDate: new Date(),
+    endDate: new Date(),
+    image: TripImage,
+    name: "Trip to New York with Friends"
+  }
+];
+
+export { countries, friendList, interestingPlaces, interestingPlaces2, trips };

@@ -13,7 +13,7 @@ const MenuBar = () => {
       : router.push(`${router.pathname}/`);
   };
   return (
-    <div className="shadow-lightgrey p-4 flex items-center justify-center gap-40">
+    <div className="shadow-lightgrey p-4 flex items-center justify-center gap-40 z-10">
       <div
         className={`${!isSearch ? `${styles.active}` : ""} cursor-pointer`}
         onClick={handleRouting}
