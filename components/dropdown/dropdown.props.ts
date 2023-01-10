@@ -1,4 +1,4 @@
-import type { SingleValue } from "react-select";
+import type { ActionMeta, SingleValue } from "react-select";
 
 export interface Option {
   value: string;
@@ -13,7 +13,8 @@ interface DropdownProps {
   placeholder: string;
   fontWeight?: number;
   fontSize?: string;
-  onChange?: (value: SingleValue<Option>) => void;
+  value: Option | null;
+  onChange?: (value: SingleValue<Option>, action?: ActionMeta<Option>) => void;
 }
 
 export default DropdownProps;

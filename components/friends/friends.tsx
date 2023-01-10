@@ -3,7 +3,7 @@ import { friendList } from "../../utils/contants";
 
 const Friends = () => {
   return (
-    <div className="flex justify-center my-4">
+    <div className="w-max flex my-4">
       {friendList.map((friend, index) => (
         <figure key={index}>
           <Image
