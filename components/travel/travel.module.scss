@@ -1,0 +1,147 @@
+.tophead {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.tophead2 {
+    font-size: 0.8rem;
+}
+
+.cols{
+    padding: 1.1rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    aspect-ratio: 2.7/3;
+   
+}
+.heading{
+    padding-left: 0.7rem;
+}
+
+
+.like {
+  display: flex;
+  justify-content: center;
+   align-items: center;
+    padding: 1.2rem 0;
+}
+.likes{
+    right: -180px; 
+    margin-top: -2.3rem;
+    bottom: -50px;
+  }
+
+.top {
+    padding-bottom: 1rem;
+    display: flex;
+    width: 100vw; 
+    border-radius: 10px; 
+    background-color: #FFF7F0;
+}
+.top2 {
+display: flex; 
+flex-direction: column; 
+column-gap: 5.7rem;
+justify-content: space-evenly;
+padding: 1.25rem 0.75rem;
+}
+
+.top3 {
+    display: flex;
+   justify-content: space-between;
+}
+
+.icon{
+    font-size: 2rem;
+}
+.btn {
+    background-color: #fff;
+}
+
+
+.btn2 {
+    background-color: #1E8572;
+    width: 380px;
+    height: 54px;
+    border-radius: 12px;
+    color: #FFFFFF; 
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+.btn3 {
+    position: absolute;
+    background-color: #1E8572;
+    width: 380px;
+    height: 54px;
+    border-radius: 12px;
+    color: #FFFFFF; 
+    margin-top: 2rem;
+    margin-left: 2rem;
+    bottom: 60px;
+    right: 20px;
+}
+
+
+.bottom {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background-color: #fff;
+    margin-top: -300px;
+    width: 100%;
+    border-radius: 30px 30px 0 0;
+    text-align: center;
+    bottom: 0;
+    transition: 3s;
+}
+
+.bottom2{
+    display: none;
+    
+}
+.hr {
+    top: 20px;
+    left: 120px;
+    height: 2px;
+    border: 1px solid #6D6D6D;
+    width: 4vw;
+    position: absolute;
+    top: 10px;
+    left: 190px;
+}
+
+.load {
+    position: absolute;
+    top: 150px;
+    left: 140px;
+}
+.load2 {
+    position: absolute;
+    top: 60px;
+    left: 140px;
+}
+.load3 {
+    position: absolute;
+    top: 120px;
+    left: 170px;
+}
+.base {
+    position: relative;
+    width: 100vw ;
+    height: 100vh;
+    background-size: cover;
+    background-position: bottom;
+    display: block;
+    max-width: 425px;
+    margin:  0 auto;
+    padding: 0.1em;
+    background: white;
+    background: cover;
+  }
+
+
+
+
+  
