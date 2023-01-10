@@ -1,13 +1,12 @@
 import { Icon } from "@iconify/react";
+import { useState } from "react";
 import Like from "../components/actions/like";
 import Travel from "../components/travel/travel";
 import { visit } from "../utils/contants";
 import styles from "../components/travel/travel.module.scss";
 import Loader from "../public/icons/loader";
-import { useState } from "react";
 
-//
-const trip1 = () => {
+const Vote = () => {
   const [modal, setModal] = useState(false);
 
   function change() {
@@ -15,10 +14,11 @@ const trip1 = () => {
       return !prev;
     });
   }
+
   return (
     <div className={styles.base}>
       <div className="h-[220px] w-full mx-auto border-solid rounded-b-[20px] shadow-md border border-transparent cursor-pointer">
-        <div className="flex  ">
+        <div className="flex">
           <Icon icon="uil:times" className="text-2xl  cursor-pointer" />
           <span className={styles.heading}>
             <h1>Time to select</h1>
@@ -71,4 +71,4 @@ const trip1 = () => {
   );
 };
 
-export default trip1;
+export default Vote;
