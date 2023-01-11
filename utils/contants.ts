@@ -3,13 +3,16 @@ import { TravelData } from "../components/travel/travel.props";
 import friend1 from "../public/images/friend1.png";
 import friend2 from "../public/images/friend2.png";
 import friend3 from "../public/images/friend3.png";
+import image1 from "../public/images/image1.png";
+import image2 from "../public/images/image2.png";
+import image3 from "../public/images/image3.png";
 import sample1 from "../public/images/sample1.png";
 import sample2 from "../public/images/sample2.png";
 import TripImage from "../public/images/trip.png";
 import visit1 from "../public/images/visit1.png";
 import visit2 from "../public/images/visit2.png";
 import TripType from "../types/trip.type";
-import Like from "../components/actions/like";
+
 const friendList = [
   {
     image: friend1,
@@ -46,6 +49,7 @@ const countries = [
   { label: "France", value: "france" },
   { label: "USA", value: "usa" }
 ];
+
 const visit: TravelData[] = [
   {
     image: visit1,
@@ -110,11 +114,30 @@ const trips: TripType[] = [
   }
 ];
 
+const tripActions = ["Create new trip", "Archive", "Delete"];
+
+const imageList = [
+  {
+    image: image1,
+    name: "image1"
+  },
+  {
+    image: image2,
+    name: "image2"
+  },
+  {
+    image: image3,
+    name: "image3"
+  }
+];
+
 export {
   countries,
   friendList,
+  imageList,
   interestingPlaces,
   interestingPlaces2,
   trips,
+  tripActions,
   visit
 };

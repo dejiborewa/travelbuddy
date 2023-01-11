@@ -4,11 +4,12 @@ import formatDate from "../../utils/formatDate";
 import dateDiff from "../../utils/dateDiff";
 import Heading from "../heading/heading";
 import MenuSmall from "../../public/icons/menu-small";
+import Friends from "../friends/friends";
 
 const Trip = ({ data }: { data: TripType }) => {
   const today = new Date();
   return (
-    <div className="g-[#FFF7F0] shadow-tripcard flex p-4 rounded-[16px] mb-6 gap-6">
+    <div className="bg-[#FFF7F0] shadow-tripcard flex p-4 rounded-[16px] mb-6 gap-6">
       <Image
         src={data.image}
         alt="data-image"
@@ -22,11 +23,12 @@ const Trip = ({ data }: { data: TripType }) => {
           <span>{0}</span>
         </div>
         <div className="flex flex-col justify-around">
-          <span>{`${formatDate(data.startDate)} - ${formatDate(
-            data.endDate
-          )}`}</span>
+          <span className="my-2 text-xs">{`${formatDate(
+            data.startDate
+          )} - ${formatDate(data.endDate)}`}</span>
           <Heading className="leading-5">{data.name}</Heading>
-          <span className="text-xs italic">
+          <Friends />
+          <span className="text-xs italic flex justify-end">
             {dateDiff(data.startDate, today)}
           </span>
         </div>

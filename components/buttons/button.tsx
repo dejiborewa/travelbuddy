@@ -3,6 +3,9 @@ import type ButtonPropsType from "./button.props";
 
 const Button: FC<ButtonPropsType> = ({
   text,
+  color = "bg-primary",
+  hoverColor = "bg-btnHover",
+  textColor = "text-white",
   type = "button",
   className,
   ...rest
@@ -11,7 +14,9 @@ const Button: FC<ButtonPropsType> = ({
     <div>
       <button
         type={type}
-        className={`bg-primary border-0 outline-0 mt-4 p-4 w-full font-mukta text-white rounded-[12px] text-base hover:bg-btnHover active:bg-btnHover ${className}`}
+        className={`${color} ${
+          color === "bg-[#C4C5C5]/70" ? "cursor-not-allowed" : "cursor-pointer"
+        } border-0 outline-0 mt-4 p-4 w-full font-mukta ${textColor} rounded-[12px] text-base hover:${hoverColor} active:${hoverColor} ${className}`}
         {...rest}
       >
         {text}

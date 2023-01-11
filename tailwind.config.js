@@ -26,7 +26,10 @@ module.exports = {
         lightgrey:
           "0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.3)",
         tripcard:
-          "0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.3)"
+          "0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.3)",
+        yetAnotherGrey:
+          "0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15)",
+        lastGrey: "0px 1px 3px 1px rgba(0, 0, 0, 0.15)"
       },
       backgroundImage: {
         welcome: "url('../public/images/welcome.png')",

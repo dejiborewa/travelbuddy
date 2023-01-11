@@ -27,7 +27,7 @@ const OnBoardingFinal = () => {
             />
             <span
               className="cursor-pointer"
-              onClick={() => router.push("/search")}
+              onClick={() => router.push("/home")}
             >
               Skip
             </span>

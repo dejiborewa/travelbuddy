@@ -8,20 +8,20 @@ const MenuSmall = (
     <path
       d="M1 4.2V17L6.6 13.8L13 17L18.6 13.8V1L13 4.2L6.6 1L1 4.2Z"
       stroke="black"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M6.6001 1V13.8"
       stroke="black"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M13 4.2002V17.0002"
       stroke="black"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );

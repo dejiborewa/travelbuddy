@@ -11,7 +11,8 @@ const Dropdown: FC<DropdownProps> = ({
   placeholder,
   fontWeight = "normal",
   fontSize = "16px",
-  onChange
+  onChange,
+  value
 }) => {
   const customStyles = {
     control: (provided: any) => ({
@@ -75,6 +76,7 @@ const Dropdown: FC<DropdownProps> = ({
       <Select
         options={options}
         styles={customStyles}
+        value={value}
         placeholder={
           <span className="mx-auto flex items-center">{placeholder}</span>
         }

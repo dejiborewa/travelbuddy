@@ -31,7 +31,9 @@ export default function Home() {
               <p>New York</p>
             </div>
 
-            <Friends />
+            <div className="w-max mx-auto">
+              <Friends />
+            </div>
 
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full mb-12">
               <p className="mb-1">
