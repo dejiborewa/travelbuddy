@@ -2,8 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Hubot Sans';
+  src:
+    url('../public/font/Hubot Sans/Hubot-Sans.woff2') format('woff2 supports variations'),
+    url('../public/font/Hubot Sans/Hubot-Sans.woff2') format('woff2-variations');
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+}
+
+html {
+  font-family: 'Hubot Sans', serif;
+}
+
 body {
-  font-family: 'Noto Serif', serif;
   margin: 0;
   padding: 0;
   background: #E1E2E2; 

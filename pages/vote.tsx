@@ -33,7 +33,7 @@ const Vote = () => {
               <Like color="bg-darkGrey" />
               <Like color="bg-darkGrey" />
             </div>
-            <span className="block italic font-mukta text-sm w-max mx-auto">
+            <span className="block  font-mukta text-sm w-max mx-auto">
               <p>Cast 3 votes to see group's top picks</p>
             </span>
           </div>
@@ -47,7 +47,7 @@ const Vote = () => {
               </div>
             ))}
           </div>
-          <div className="w-full">
+          <div className="w-full mb-4">
             <Button
               type="submit"
               text="Submit my answer"

@@ -17,7 +17,7 @@ module.exports = {
         darkGrey: "#6D6D6D"
       },
       fontFamily: {
-        mukta: ["Mukta", "sans-serif"],
+        mukta: ["Work San", "sans-serif"],
         noto: ["Noto Serif", "serif"]
       },
       boxShadow: {

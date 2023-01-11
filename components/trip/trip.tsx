@@ -28,7 +28,7 @@ const Trip = ({ data }: { data: TripType }) => {
           )} - ${formatDate(data.endDate)}`}</span>
           <Heading className="leading-5">{data.name}</Heading>
           <Friends />
-          <span className="text-xs italic flex justify-end">
+          <span className="text-xs  flex justify-end">
             {dateDiff(data.startDate, today)}
           </span>
         </div>

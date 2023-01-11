@@ -32,9 +32,7 @@ const Travel: FC<TravelProps> = ({ travelData, className }) => {
                 <span>{travelData.rating}</span>
               </span>
 
-              <span className="text-sm italic font-mukta">
-                {travelData.pricing}
-              </span>
+              <span className="text-sm  font-mukta">{travelData.pricing}</span>
             </div>
 
             <div>
@@ -44,7 +42,7 @@ const Travel: FC<TravelProps> = ({ travelData, className }) => {
             </div>
 
             <div className="absolute bottom-2">
-              <span className="text-sm italic font-mukta bg-white px-2">
+              <span className="text-sm  font-mukta bg-white px-2">
                 Restaurant
               </span>
             </div>
