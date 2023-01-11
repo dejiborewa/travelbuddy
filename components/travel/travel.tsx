@@ -1,9 +1,10 @@
 import Image from "next/image";
 import type { FC } from "react";
-import TravelProps from "./travel.props";
 import { Icon } from "@iconify/react";
+import TravelProps from "./travel.props";
 import styles from "./travel.module.scss";
 import Like from "../actions/like";
+
 const Travel: FC<TravelProps> = ({ travelData, className }) => {
   return (
     <div>
