@@ -18,7 +18,7 @@ const AvailableTrips: FC<AvailableTripsProps> = ({ trips }) => {
             onClick={
               role === "ADMIN"
                 ? () => router.push("/trip/edit-trip")
-                : () => console.log("nothing")
+                : () => router.push("/trip/view-trip")
             }
           >
             <Trip data={trip} />

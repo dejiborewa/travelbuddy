@@ -54,14 +54,36 @@ const visit: TravelData[] = [
   {
     image: visit1,
     name: "Boucherie Union Square",
-    rating: "4.6(2k)",
+    rating: "4.6 (2k)",
     pricing: "$$$",
     like: "bg-darkGrey"
   },
   {
     image: visit2,
     name: "Central Park ",
-    rating: "4.6(244k)",
+    rating: "4.6 (2k)",
+    pricing: "$$$",
+    like: "bg-darkGrey"
+  },
+
+  {
+    image: visit1,
+    name: "Boucherie Union Square",
+    rating: "4.6 (2k)",
+    pricing: "$$$",
+    like: "bg-darkGrey"
+  },
+  {
+    image: visit1,
+    name: "Boucherie Union Square",
+    rating: "4.6 (2k)",
+    pricing: "$$$",
+    like: "bg-darkGrey"
+  },
+  {
+    image: visit2,
+    name: "Central Park ",
+    rating: "4.6 (2k)",
     pricing: "Free",
     like: "bg-darkGrey"
   },

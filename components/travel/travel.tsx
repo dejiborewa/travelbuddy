@@ -7,40 +7,51 @@ import Like from "../actions/like";
 
 const Travel: FC<TravelProps> = ({ travelData, className }) => {
   return (
-    <div>
+    <div className="relative">
       <div
-        className={` bg-gray-150 flex w-full rounded-[10px] shadow-md border border-transparent cursor-pointer ${className}`}
+        className={`bg-gray-150 flex w-full rounded-[10px] shadow-md border border-transparent cursor-pointer ${className}`}
       >
         <div className={styles.top}>
-          <div className="  text-sm p-3">
+          <div className="relative text-sm w-[70%] h-[160px] overflow-hidden">
             <Image
               src={travelData.image}
               alt="travel"
-              className="w-20.5 h-[120px] rounded-t-[10px]"
+              className="rounded-[12px] object-cover"
+              fill={true}
+              priority
             />
           </div>
-          <div className={styles.top2}>
-            <span className={styles.top3}>
-              <Icon
-                className={styles.icon}
-                icon="material-symbols:star-rounded"
-                color="gold"
-              />
-              <p>{travelData.rating}</p>
+          <div className="w-full relative">
+            <div className="flex items-center justify-between">
+              <span className="flex items-center">
+                <Icon
+                  className={styles.icon}
+                  icon="material-symbols:star-rounded"
+                  color="gold"
+                />
+                <span>{travelData.rating}</span>
+              </span>
 
-              <p>{travelData.pricing}</p>
-            </span>
-
-            <div className="">
-              <h1>{travelData.name}</h1>
+              <span className="text-sm italic font-mukta">
+                {travelData.pricing}
+              </span>
             </div>
+
             <div>
-              <button className={styles.btn}>Restaurant</button>
-              <Like className={styles.likes} color={travelData.like} />
+              <h1 className="w-[70%] text-[16px] leading-5 my-2">
+                {travelData.name}
+              </h1>
+            </div>
+
+            <div className="absolute bottom-2">
+              <span className="text-sm italic font-mukta bg-white px-2">
+                Restaurant
+              </span>
             </div>
           </div>
         </div>
       </div>
+      <Like className={styles.likes} color={travelData.like} />
     </div>
   );
 };

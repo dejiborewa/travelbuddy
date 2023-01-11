@@ -13,7 +13,7 @@ const Home = () => {
 
   return (
     <Main>
-      <section className="h-[85vh] w-full overflow-y-scroll overflow-x-visible px-2">
+      <section className="h-[85vh] w-full overflow-y-scroll overflow-x-visible ">
         <Heading className="font-mukta text-center">My Trips</Heading>
         {hasTrips ? (
           <AvailableTrips trips={trips} />
