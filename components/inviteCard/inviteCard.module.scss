@@ -8,3 +8,83 @@
     margin: 1em 0;
     padding: 1.5em;
 }
+
+
+.top {
+    display: flex;
+   padding-top: 2rem;
+   padding-bottom:0.7rem ;
+    color: #000;
+}
+
+
+.top input:focus{
+    outline: none;  
+}
+
+.buddy {
+    display: flex;
+    padding: 2rem 0.3rem;
+}
+
+
+.admin {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-bottom: 1.2rem;
+}
+
+
+.name {
+    border-radius: 50%;
+    width: 49px;
+    height: 42px;
+    padding: 10px;
+   background: #ADECE0;
+    border: 1.5px solid #000;
+    color: #000;
+    text-align: center;
+  
+}
+
+.name2 {
+    border-radius: 50%;
+    width: 49px;
+    height: 42px;
+    padding: 10px;
+    background: #FBE9B3;
+    border: 1.5px solid #000;
+    color: #000;
+    text-align: center;
+  
+}
+
+.list {
+    height: 40vh;
+    overflow-y: scroll;
+}
+
+
+ .spiral {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ }
+
+ .put::placeholder {
+    color: #000;
+  
+ }
+
+
+
+ .mail{
+    font-size: 0.9rem;
+ }
+
+ .hr {
+    border: 1px solid #000;
+    margin-bottom: 2rem;
+ }
