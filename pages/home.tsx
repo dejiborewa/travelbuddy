@@ -32,7 +32,7 @@ const Home = () => {
             </div>
           </>
         )}
-        <div className="-mx-[2.0em] absolute bottom-0 w-full">
+        <div className="-mx-[1.5em] absolute bottom-0 w-full">
           <MenuBar />
         </div>
       </section>

@@ -1,34 +1,31 @@
 import { LocationData } from "../components/location/location.props";
 import { TravelData } from "../components/travel/travel.props";
-import friend1 from "../public/images/friend1.png";
-import friend2 from "../public/images/friend2.png";
-import friend3 from "../public/images/friend3.png";
-import image1 from "../public/images/image1.png";
-import image2 from "../public/images/image2.png";
-import image3 from "../public/images/image3.png";
 import sample1 from "../public/images/sample1.png";
 import sample2 from "../public/images/sample2.png";
 import TripImage from "../public/images/trip.png";
 import visit1 from "../public/images/visit1.png";
 import visit2 from "../public/images/visit2.png";
+import city1 from "../public/images/vote1.png";
+import city2 from "../public/images/vote2.png";
+import city3 from "../public/images/vote3.png";
 import TripType from "../types/trip.type";
 
 const friendList = [
   {
-    image: friend1,
-    label: "Maria"
+    firstName: "Maria",
+    lastName: "Simi"
   },
   {
-    image: friend2,
-    label: "Sanaa"
+    firstName: "Sanaa",
+    lastName: "Khaloan"
   },
   {
-    image: friend3,
-    label: "Ayo"
+    firstName: "Ayo",
+    lastName: "Akin"
   },
   {
-    image: friend3,
-    label: "Emeka"
+    firstName: "Emeka",
+    lastName: "Nwdo"
   }
 ];
 
@@ -136,30 +133,27 @@ const trips: TripType[] = [
   }
 ];
 
-const tripActions = ["Create new trip", "Archive", "Delete"];
-
-const imageList = [
+const previewCities = [
   {
-    image: image1,
-    name: "image1"
+    image: city1,
+    name: "new york"
   },
   {
-    image: image2,
-    name: "image2"
+    image: city2,
+    name: "lagos"
   },
   {
-    image: image3,
-    name: "image3"
+    image: city3,
+    name: "beijing"
   }
 ];
 
 export {
   countries,
   friendList,
-  imageList,
   interestingPlaces,
   interestingPlaces2,
   trips,
-  tripActions,
+  previewCities,
   visit
 };

@@ -28,26 +28,30 @@ const TripDetails: FC<PropsWithChildren<TripDetailsType>> = ({
       </div>
       <form onSubmit={handleSubmit}>
         <div className="w-full mt-4">
-          {editable ? (
-            <></>
-          ) : (
+          {editable && location && setLocation ? (
             <Dropdown
               options={countries}
               onChange={(value) => setLocation(value)}
               value={location}
               placeholder={"Where are you travelling?"}
             />
+          ) : (
+            <></>
           )}
         </div>
         <div className="flex items-center justify-between -mt-3">
-          <div className="w-[48%]">
-            <Input
-              type="date"
-              value={dateData.startDate}
-              id="startDate"
-              onChange={handleDateChange}
-            />
-          </div>
+          {editable && handleDateChange ? (
+            <div className="w-[48%]">
+              <Input
+                type="date"
+                value={dateData.startDate}
+                id="startDate"
+                onChange={handleDateChange}
+              />
+            </div>
+          ) : (
+            <></>
+          )}
 
           <div className="w-[48%]">
             <div className="relative border border-black p-2 rounded-[24px]">
@@ -58,13 +62,18 @@ const TripDetails: FC<PropsWithChildren<TripDetailsType>> = ({
                   className="text-[18px] cursor-pointer"
                 />
               </span>
-              <Input
-                type="date"
-                value={dateData.endDate}
-                id="endDate"
-                onChange={handleDateChange}
-                className="absolute opacity-0 top-0 bottom-0 right-0 left-0"
-              />
+
+              {editable && handleDateChange ? (
+                <Input
+                  type="date"
+                  value={dateData.endDate}
+                  id="endDate"
+                  onChange={handleDateChange}
+                  className="absolute opacity-0 top-0 bottom-0 right-0 left-0"
+                />
+              ) : (
+                <></>
+              )}
             </div>
           </div>
         </div>

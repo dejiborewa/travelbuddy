@@ -11,7 +11,7 @@ const AvailableTrips: FC<AvailableTripsProps> = ({ trips }) => {
 
   return (
     <>
-      <section className="mt-4">
+      <section className="mt-4 px-1">
         {trips.map((trip, index) => (
           <div
             key={index}
