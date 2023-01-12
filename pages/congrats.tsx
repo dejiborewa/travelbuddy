@@ -1,23 +1,39 @@
 import { Icon } from "@iconify/react";
 import { useRouter } from "next/router";
-import React, { FormEvent, useState } from "react";
+import React, { useState, FormEvent, useEffect } from "react";
 import { motion } from "framer-motion";
+
 import Button from "../components/buttons/button";
 import Heading from "../components/heading/heading";
 import Input from "../components/input/input";
 import Main from "../layout/main/main";
 import User from "../public/icons/user";
+
 import Meta from "../templates/meta";
+import { register } from "../redux/actions/authAction";
+import { useAppDispatch, useAppSelector } from "../hooks/reduxHooks";
 
 const Congrats = () => {
-  const [name, setName] = useState("");
+  const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
 
-  const router = useRouter();
+  const dispatch = useAppDispatch();
 
-  const handleSubmit = (event: FormEvent) => {
-    event.preventDefault();
-    router.push("/onboarding/1");
+  const router = useRouter();
+  const { auth } = useAppSelector((state) => state);
+
+  useEffect(() => {
+    if (auth.token) router.push("/onboarding/1");
+  }, [auth.token, router]);
+
+  // function handleLogout() {
+  //   localStorage.removeItem("token");
+  //   dispatch(unsetUser());
+  // }
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    dispatch(register({ userName, email }));
   };
 
   return (
@@ -48,11 +64,13 @@ const Congrats = () => {
               </div>
             </div>
 
-            <form onSubmit={handleSubmit} className="mt-24">
+            <form className="mt-24" onSubmit={handleSubmit}>
               <Input
-                value={name}
+                value={userName}
                 placeholder="Your name"
-                onChange={(event) => setName(event.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  setUserName(e.target.value)
+                }
                 required
               />
 
@@ -60,7 +78,9 @@ const Congrats = () => {
                 type="email"
                 value={email}
                 placeholder="Your email"
-                onChange={(event) => setEmail(event.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  setEmail(e.target.value)
+                }
                 required
               />
 
