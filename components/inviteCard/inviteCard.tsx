@@ -2,7 +2,12 @@ import { FC } from "react";
 import styles from "./inviteCard.module.scss";
 import InviteCardProps from "./inviteCard.props";
 
-const InviteCard: FC<InviteCardProps> = ({ heading, text, rightComponent }) => {
+const InviteCard: FC<InviteCardProps> = ({
+  heading,
+  text,
+  rightComponent,
+  leftComponent
+}) => {
   return (
     <div className={styles.card}>
       <div className="w-[70%]">
@@ -12,6 +17,7 @@ const InviteCard: FC<InviteCardProps> = ({ heading, text, rightComponent }) => {
         </p>
       </div>
       <div>{rightComponent}</div>
+      <div>{leftComponent}</div>
     </div>
   );
 };
