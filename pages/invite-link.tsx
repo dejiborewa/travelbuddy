@@ -35,9 +35,11 @@ const InviteLink = () => {
           heading="Unique group link is ready"
           text=" Share it with your travel buddies so that you can plan everything
           together"
-          rightComponent={<Icon icon="radix-icons:copy" className="text-3xl" />}
-          leftComponent={
-            <Icon icon="mdi:share-variant-outline" className="text-3xl" />
+          rightComponent={
+            <div className="flex gap-3">
+              <Icon icon="ic:sharp-content-copy" className="text-3xl" />
+              <Icon icon="mdi:share-variant-outline" className="text-3xl" />
+            </div>
           }
         />
         <div className={styles.buddy}>
