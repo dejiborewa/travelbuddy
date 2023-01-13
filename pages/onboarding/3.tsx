@@ -59,7 +59,10 @@ const OnBoardingFinal = () => {
             </div>
           </section>
 
-          <Button text="Start planning" className="mt-8" />
+          <form onSubmit={() => router.push("/home")}>
+            <Button type="submit" text="Start planning" className="mt-8" />
+          </form>
+
           <ProgressBar state={3} />
         </section>
       </Main>

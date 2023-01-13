@@ -105,7 +105,7 @@ const EditTrip = () => {
           color="bg-[#C4C5C5]/70"
           hoverColor="bg-[#C4C5C5]/70"
           textColor="bg-[#6D6D6D]"
-          className="absolute bottom-[70px] mb-[2em] w-[90%]"
+          className="bottom-[70px] mb-[2em] w-[90%]"
         />
       </section>
       <div className="-mx-[1.5em] absolute bottom-0 w-full">

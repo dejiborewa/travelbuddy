@@ -32,7 +32,10 @@ const Invite = () => {
           <Heading className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center leading-5">
             Invite your travel buddies to join your trip
           </Heading>
-          <div className="absolute top-[203px] left-1/2 -translate-x-1/2">
+          <div
+            className="absolute top-[203px] left-1/2 -translate-x-1/2"
+            onClick={() => router.push("/trip/view-trip")}
+          >
             <Add invert={true} />
           </div>
         </section>

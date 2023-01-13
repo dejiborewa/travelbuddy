@@ -102,36 +102,6 @@ const trips: TripType[] = [
     endDate: new Date(),
     image: TripImage,
     name: "Trip to New York with Friends"
-  },
-  {
-    startDate: new Date(),
-    endDate: new Date(),
-    image: TripImage,
-    name: "Trip to New York with Friends"
-  },
-  {
-    startDate: new Date(),
-    endDate: new Date(),
-    image: TripImage,
-    name: "Trip to New York with Friends"
-  },
-  {
-    startDate: new Date(),
-    endDate: new Date(),
-    image: TripImage,
-    name: "Trip to New York with Friends"
-  },
-  {
-    startDate: new Date(),
-    endDate: new Date(),
-    image: TripImage,
-    name: "Trip to New York with Friends"
-  },
-  {
-    startDate: new Date(),
-    endDate: new Date(),
-    image: TripImage,
-    name: "Trip to New York with Friends"
   }
 ];
 

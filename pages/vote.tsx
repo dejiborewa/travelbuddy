@@ -12,7 +12,7 @@ import Button from "../components/buttons/button";
 
 const Vote = () => {
   const [modal, setModal] = useState(false);
-  const isVoting = true;
+  const isVoting = false;
 
   const router = useRouter();
   const [votes, setVotes] = useState<number[]>([]);
@@ -113,7 +113,7 @@ const Vote = () => {
                 </span>
                 <button
                   className={styles.btn3}
-                  onClick={() => router.push("/home")}
+                  onClick={() => router.push("/newtrips")}
                 >
                   Back to home
                 </button>
