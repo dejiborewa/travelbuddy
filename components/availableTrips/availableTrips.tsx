@@ -11,7 +11,7 @@ const AvailableTrips: FC<AvailableTripsProps> = ({ trips }) => {
 
   return (
     <>
-      <section className="mt-4">
+      <section className="mt-4 px-1">
         {trips.map((trip, index) => (
           <div
             key={index}
@@ -27,7 +27,7 @@ const AvailableTrips: FC<AvailableTripsProps> = ({ trips }) => {
       </section>
       <div
         className="my-16 w-max mx-auto"
-        onClick={() => router.push("/create-trip")}
+        onClick={() => router.push("/trip/create-trip")}
       >
         <Add />
       </div>

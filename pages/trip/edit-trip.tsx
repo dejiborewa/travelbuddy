@@ -1,13 +1,13 @@
 import { Icon } from "@iconify/react";
 import { useRouter } from "next/router";
-import { ChangeEvent, FormEvent, useRef, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import Button from "../../components/buttons/button";
 import { Option } from "../../components/dropdown/dropdown.props";
 import ImageList from "../../components/imageList/imageList";
+import MenuBar from "../../components/menubar/menubar";
+import TopVotes from "../../components/topVotes/topVotes";
 import TripDetails from "../../components/tripDetails/tripDetails";
-import useHandleOutsideClick from "../../hooks/useHandleOutsideClick";
 import Main from "../../layout/main/main";
-import { tripActions } from "../../utils/contants";
 
 const EditTrip = () => {
   const [dateData, setDateData] = useState({
@@ -16,11 +16,10 @@ const EditTrip = () => {
     returnDate: "Return Date"
   });
   const [location, setLocation] = useState<null | Option>(null);
+  const locationValue = "New York City";
 
+  const launchedVoting = true;
   const router = useRouter();
-  const actionMenuRef = useRef(null);
-  const [openActionMenu, setOpenActionMenu] = useState(false);
-
   const handleDateChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.id === "startDate") {
       setDateData({
@@ -43,8 +42,6 @@ const EditTrip = () => {
     router.push("/invite");
   };
 
-  useHandleOutsideClick(actionMenuRef, () => setOpenActionMenu(false));
-
   return (
     <Main>
       <TripDetails
@@ -61,61 +58,59 @@ const EditTrip = () => {
               <span>Edit your trip</span>
             </div>
 
-            <div className="relative z-10" ref={actionMenuRef}>
-              <Icon
-                icon="ph:dots-three-vertical-bold"
-                className="text-3xl cursor-pointer"
-                onClick={() => setOpenActionMenu(!openActionMenu)}
-              />
-              {openActionMenu && (
-                <div className="absolute w-[176px] right-0 top-full shadow-yetAnotherGrey bg-offWhite bg-white py-2 px-3 rounded-md">
-                  <ul>
-                    {tripActions.map((item, index) => (
-                      <li
-                        key={index}
-                        className={`cursor-pointer my-2 ${
-                          item === "Delete" ? "text-red-500" : ""
-                        }`}
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+            <div className="relative z-10">
+              <Icon icon="ph:trash-bold" className="text-3xl cursor-pointer" />
             </div>
           </div>
         }
         handleDateChange={handleDateChange}
         dateData={dateData}
         location={location}
+        locationPlaceholder={
+          <div className="flex items-center gap-4">
+            <Icon
+              icon="material-symbols:location-on-rounded"
+              className="text-3xl"
+            />
+            <span>{locationValue}</span>
+          </div>
+        }
         setLocation={setLocation}
         editable={true}
       />
       <section>
-        <h1>Travel buddies</h1>
-        <ImageList />
+        <h1 className="text-[18px]">Travel buddies</h1>
+        <ImageList editable={true} />
         <div>
-          <h1>Your trip top votes</h1>
+          <h1 className="text-[18px]">Your trip top votes</h1>
           <span className="text-xs leading-4 block mt-2">
             You have no places selected for your trip, create voting to know
             what your travel buddies think
           </span>
-          <div className="flex items-center px-4 py-3 bg-[#FFFDFB] rounded-[16px] justify-between w-full shadow-yetAnotherGrey my-4">
-            <span className="w-1/2">Itinerary voting</span>
 
-            <button className="w-1/2 bg-primary border-0 outline-0 p-4 font-mukta text-white rounded-[12px] text-base hover:bg-btnHover active:bg-btnHover">
-              Launch now
-            </button>
-          </div>
+          {launchedVoting ? (
+            <TopVotes />
+          ) : (
+            <div className="flex items-center px-4 py-3 bg-[#FFFDFB] rounded-[16px] justify-between w-full shadow-yetAnotherGrey my-4">
+              <span className="w-1/2">Itinerary voting</span>
+
+              <button className="w-1/2 bg-primary border-0 outline-0 p-4 font-mukta text-white rounded-[12px] text-base hover:bg-btnHover active:bg-btnHover">
+                Launch now
+              </button>
+            </div>
+          )}
         </div>
         <Button
           text="Save changes"
           color="bg-[#C4C5C5]/70"
           hoverColor="bg-[#C4C5C5]/70"
           textColor="bg-[#6D6D6D]"
+          className="absolute bottom-[70px] mb-[2em] w-[90%]"
         />
       </section>
+      <div className="-mx-[1.5em] absolute bottom-0 w-full">
+        <MenuBar />
+      </div>
     </Main>
   );
 };

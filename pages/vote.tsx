@@ -1,6 +1,7 @@
 import { Icon } from "@iconify/react";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import { toast } from "react-toastify";
 import Like from "../components/actions/like";
 import Travel from "../components/travel/travel";
 import { visit } from "../utils/contants";
@@ -14,6 +15,25 @@ const Vote = () => {
   const isVoting = true;
 
   const router = useRouter();
+  const [votes, setVotes] = useState<number[]>([]);
+
+  const handleSelection = (index: number) => {
+    if (votes.length < 3) {
+      // add vote
+      setVotes([...votes, index]);
+    }
+
+    if (votes.includes(index)) {
+      // uncheck vote
+      const filteredVotes = votes.filter((vote) => vote !== index);
+      setVotes(filteredVotes);
+    }
+
+    if (votes.length === 3 && !votes.includes(index)) {
+      // vote limit UI warning
+      toast.warn("Maximum votes limit reached");
+    }
+  };
 
   return (
     <>
@@ -29,9 +49,21 @@ const Vote = () => {
               Trip to New York with friends
             </h1>
             <div className={styles.like}>
-              <Like color="bg-darkGrey" />
-              <Like color="bg-darkGrey" />
-              <Like color="bg-darkGrey" />
+              <Like
+                color={
+                  votes[0] !== undefined ? "bg-customYellow" : "bg-darkGrey"
+                }
+              />
+              <Like
+                color={
+                  votes[1] !== undefined ? "bg-customYellow" : "bg-darkGrey"
+                }
+              />
+              <Like
+                color={
+                  votes[2] !== undefined ? "bg-customYellow" : "bg-darkGrey"
+                }
+              />
             </div>
             <span className="block  font-mukta text-sm w-max mx-auto">
               <p>Cast 3 votes to see group's top picks</p>
@@ -42,8 +74,12 @@ const Vote = () => {
         <div className="max-h-[70%] overflow-y-scroll my-8">
           <div>
             {visit.map((data, index) => (
-              <div key={index} className="mb-6 px-1">
-                <Travel travelData={data} />
+              <div
+                key={index}
+                className="mb-6 px-1"
+                onClick={() => handleSelection(data.id)}
+              >
+                <Travel travelData={data} selected={votes.includes(data.id)} />
               </div>
             ))}
           </div>

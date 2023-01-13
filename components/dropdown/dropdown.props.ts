@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import type { ActionMeta, SingleValue } from "react-select";
 
 export interface Option {
@@ -10,7 +11,7 @@ interface DropdownProps {
   textColor?: string;
   border?: string;
   background?: string;
-  placeholder: string;
+  placeholder: ReactNode;
   fontWeight?: number;
   fontSize?: string;
   value: Option | null;

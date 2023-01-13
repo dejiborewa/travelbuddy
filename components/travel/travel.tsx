@@ -5,7 +5,7 @@ import TravelProps from "./travel.props";
 import styles from "./travel.module.scss";
 import Like from "../actions/like";
 
-const Travel: FC<TravelProps> = ({ travelData, className }) => {
+const Travel: FC<TravelProps> = ({ travelData, className, selected }) => {
   return (
     <div className="relative">
       <div
@@ -49,7 +49,10 @@ const Travel: FC<TravelProps> = ({ travelData, className }) => {
           </div>
         </div>
       </div>
-      <Like className={styles.likes} color={travelData.like} />
+      <Like
+        className={styles.likes}
+        color={selected ? "bg-customYellow" : "bg-darkGrey"}
+      />
     </div>
   );
 };
