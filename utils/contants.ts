@@ -10,6 +10,8 @@ import city2 from "../public/images/vote2.png";
 import city3 from "../public/images/vote3.png";
 import TripType from "../types/trip.type";
 
+export const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
+
 const friendList = [
   {
     firstName: "Maria",

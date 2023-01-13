@@ -1,14 +1,18 @@
-import { useRouter } from "next/router";
-
+import { FormEvent, useState } from "react";
 import { motion } from "framer-motion";
-import Friends from "../components/friends/friends";
+import Secondary from "../layout/secondary/secondary";
 import Heading from "../components/heading/heading";
-import Intro from "../layout/intro/intro";
+import Input from "../components/input/input";
 import Button from "../components/buttons/button";
-import Meta from "../templates/meta";
+import Logo from "../public/icons/logo";
 
-export default function Home() {
-  const router = useRouter();
+const Login = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+  };
 
   return (
     <motion.div
@@ -16,40 +20,29 @@ export default function Home() {
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Meta>
-        <title>Login | TravelBuddy</title>
-      </Meta>
-      <Intro>
-        <section className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%]">
-          <div className="relative rounded-[40px] bg-white h-[400px] text-center p-4">
-            <p className="mb-4">You've been invited to join</p>
+      <Secondary className="bg-welcome h-screen">
+        <section className="absolute bottom-0 bg-white w-full px-6 pt-6 pb-12 rounded-t-[70px]">
+          <div className="mx-auto w-max my-2">{Logo}</div>
 
-            <Heading>Trip to New York with friends</Heading>
+          <Heading className="text-center mt-4">Login to TravelBuddy</Heading>
+          <form onSubmit={handleSubmit}>
+            <Input
+              placeholder="Your name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <Input
+              placeholder="Your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
 
-            <div className="my-4">
-              <p className="mb-2">Dec 12 - Dec 31, 2022</p>
-              <p>New York</p>
-            </div>
-
-            <div className="w-max mx-auto">
-              <Friends />
-            </div>
-
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full mb-12">
-              <p className="mb-1">
-                Maria invited you to join a Trip to New York
-              </p>
-              <p>Join now to begin planning!</p>
-            </div>
-          </div>
-
-          <Button
-            text="Accept and join the trip"
-            onClick={() => router.push("/congrats")}
-            type="button"
-          />
+            <Button text="Start planning" type="submit" />
+          </form>
         </section>
-      </Intro>
+      </Secondary>
     </motion.div>
   );
-}
+};
+
+export default Login;
