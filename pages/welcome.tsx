@@ -11,51 +11,28 @@ import Main from "../layout/main/main";
 import User from "../public/icons/user";
 
 import Meta from "../templates/meta";
-import { useAppDispatch } from "../hooks/reduxHooks";
-import { postRequest } from "../utils/api/calls";
-import { storeToken } from "../store/slices/userSlice";
 
-const Welcome = () => {
+const Register = () => {
   const [email, setEmail] = useState("");
-  const router = useRouter();
-  const dispatch = useAppDispatch();
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    try {
-      setLoading(true);
-      const { data, status } = await postRequest({
-        url: "/auth/login/",
-        data: {
-          login: {
-            email
-          }
-        }
-      });
-
-      if (status >= 200 && status <= 299) {
-        if (data.access_token) {
-          localStorage.setItem("user", JSON.stringify(data.access_token));
-          dispatch(
-            storeToken({
-              token: data.access_token
-            })
-          );
-          router.push("/home");
-        }
-      }
-    } catch (err) {
-      toast.error("Something went wrong");
-    } finally {
+    setLoading(true);
+    setTimeout(() => {
+      toast.success("Account created");
+      router.push("/");
       setLoading(false);
-    }
+    }, 2000);
   };
 
   return (
     <>
       <Meta>
-        <title>Welcome | TravelBuddy</title>
+        <title>Register | TravelBuddy</title>
       </Meta>
       <motion.main
         initial={{ opacity: 0, x: -5 }}
@@ -81,14 +58,23 @@ const Welcome = () => {
             </div>
 
             <form className="mt-24" onSubmit={handleSubmit}>
-              {/* <Input
-                value={userName}
-                placeholder="Your name"
+              <Input
+                value={firstName}
+                placeholder="First name"
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setUserName(e.target.value)
+                  setFirstName(e.target.value)
                 }
                 required
-              /> */}
+              />
+
+              <Input
+                value={lastName}
+                placeholder="Last name"
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  setLastName(e.target.value)
+                }
+                required
+              />
 
               <Input
                 type="email"
@@ -109,4 +95,4 @@ const Welcome = () => {
   );
 };
 
-export default Welcome;
+export default Register;

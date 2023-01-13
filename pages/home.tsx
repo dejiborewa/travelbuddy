@@ -9,7 +9,7 @@ import { trips } from "../utils/contants";
 
 const Home = () => {
   const router = useRouter();
-  const hasTrips = true;
+  const hasTrips = false;
 
   return (
     <Main>

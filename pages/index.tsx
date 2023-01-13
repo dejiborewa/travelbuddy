@@ -1,5 +1,7 @@
 import { FormEvent, useState } from "react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
+import { toast } from "react-toastify";
 import Secondary from "../layout/secondary/secondary";
 import Heading from "../components/heading/heading";
 import Input from "../components/input/input";
@@ -7,11 +9,20 @@ import Button from "../components/buttons/button";
 import Logo from "../public/icons/logo";
 
 const Login = () => {
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setLoading(true);
+    setTimeout(() => {
+      toast.success("Account created");
+      router.push("/onboarding/1");
+      setLoading(false);
+    }, 2000);
   };
 
   return (
@@ -27,17 +38,34 @@ const Login = () => {
           <Heading className="text-center mt-4">Login to TravelBuddy</Heading>
           <form onSubmit={handleSubmit}>
             <Input
-              placeholder="Your name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-            <Input
-              placeholder="Your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={firstName}
+              placeholder="First name"
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setFirstName(e.target.value)
+              }
+              required
             />
 
-            <Button text="Start planning" type="submit" />
+            <Input
+              value={lastName}
+              placeholder="Last name"
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setLastName(e.target.value)
+              }
+              required
+            />
+
+            <Input
+              type="email"
+              value={email}
+              placeholder="Your email"
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setEmail(e.target.value)
+              }
+              required
+            />
+
+            <Button text="Start planning" type="submit" loading={loading} />
           </form>
         </section>
       </Secondary>
