@@ -7,6 +7,7 @@ interface ButtonPropsType extends HTMLProps<HTMLButtonElement> {
   color?: string;
   hoverColor?: string;
   textColor?: string;
+  loading?: boolean;
 }
 
 export default ButtonPropsType;
