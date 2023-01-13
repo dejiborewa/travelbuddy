@@ -26,7 +26,7 @@ const Home = () => {
             </div>
             <div
               className="my-16 w-max mx-auto"
-              onClick={() => router.push("/create-trip")}
+              onClick={() => router.push("/trip/create-trip")}
             >
               <Add />
             </div>

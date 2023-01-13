@@ -24,6 +24,8 @@ const Dropdown: FC<DropdownProps> = ({
       boxShadow: "none",
       cursor: "pointer",
       borderRadius: "47.915px",
+      paddingTop: "4px",
+      paddingBottom: "4px",
       fontWeight,
       fontSize
     }),
@@ -77,9 +79,7 @@ const Dropdown: FC<DropdownProps> = ({
         options={options}
         styles={customStyles}
         value={value}
-        placeholder={
-          <span className="mx-auto flex items-center">{placeholder}</span>
-        }
+        placeholder={<>{placeholder}</>}
         onChange={onChange}
       />
     </div>

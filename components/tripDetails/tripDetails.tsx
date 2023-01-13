@@ -14,31 +14,40 @@ const TripDetails: FC<PropsWithChildren<TripDetailsType>> = ({
   marginTop = "mt-12",
   location,
   setLocation,
+  locationPlaceholder,
   editable
 }) => {
   return (
     <section>
       {headerComponent}
       <div className={`flex items-center gap-2 ${marginTop}`}>
-        <Icon
-          icon="material-symbols:edit-outline-rounded"
-          className="text-2xl"
-        />
-        <div>Trip to NY with friends</div>
+        {editable ? (
+          <Icon
+            icon="material-symbols:edit-outline-rounded"
+            className="text-2xl"
+          />
+        ) : (
+          <></>
+        )}
+
+        <div className="text-[18px]">Trip to NY with friends</div>
       </div>
       <form onSubmit={handleSubmit}>
         <div className="w-full mt-4">
-          {editable && location && setLocation ? (
+          {editable && location !== undefined && setLocation ? (
             <Dropdown
               options={countries}
               onChange={(value) => setLocation(value)}
               value={location}
-              placeholder={"Where are you travelling?"}
+              placeholder={locationPlaceholder}
             />
           ) : (
-            <></>
+            <div className="border border-black h-[47px] rounded-[47.915px] mb-6 px-2 flex items-center">
+              {locationPlaceholder}
+            </div>
           )}
         </div>
+
         <div className="flex items-center justify-between -mt-3">
           {editable && handleDateChange ? (
             <div className="w-[48%]">
@@ -50,13 +59,21 @@ const TripDetails: FC<PropsWithChildren<TripDetailsType>> = ({
               />
             </div>
           ) : (
-            <></>
+            <div className="w-[48%]">
+              <div className="border border-black p-2 rounded-[24px] flex items-center justify-between">
+                {dateData.startDate}
+                <Icon
+                  icon="material-symbols:date-range"
+                  className="text-[18px] cursor-pointer"
+                />
+              </div>
+            </div>
           )}
 
           <div className="w-[48%]">
             <div className="relative border border-black p-2 rounded-[24px]">
               <span className="flex items-center justify-between">
-                {dateData.returnDate}
+                {editable ? dateData.returnDate : dateData.endDate}
                 <Icon
                   icon="material-symbols:date-range"
                   className="text-[18px] cursor-pointer"

@@ -49,48 +49,48 @@ const countries = [
 
 const visit: TravelData[] = [
   {
+    id: 0,
     image: visit1,
     name: "Boucherie Union Square",
     rating: "4.6 (2k)",
-    pricing: "$$$",
-    like: "bg-darkGrey"
+    pricing: "$$$"
   },
   {
+    id: 1,
     image: visit2,
     name: "Central Park ",
     rating: "4.6 (2k)",
-    pricing: "$$$",
-    like: "bg-darkGrey"
+    pricing: "$$$"
   },
 
   {
+    id: 2,
     image: visit1,
     name: "Boucherie Union Square",
     rating: "4.6 (2k)",
-    pricing: "$$$",
-    like: "bg-darkGrey"
+    pricing: "$$$"
   },
   {
+    id: 3,
     image: visit1,
     name: "Boucherie Union Square",
     rating: "4.6 (2k)",
-    pricing: "$$$",
-    like: "bg-darkGrey"
+    pricing: "$$$"
   },
   {
+    id: 4,
     image: visit2,
     name: "Central Park ",
     rating: "4.6 (2k)",
-    pricing: "Free",
-    like: "bg-darkGrey"
+    pricing: "Free"
   },
 
   {
+    id: 5,
     image: visit1,
     name: "Boucherie Union Square",
     rating: "4.6(2k)",
-    pricing: "$$$",
-    like: "bg-darkGrey"
+    pricing: "$$$"
   }
 ];
 

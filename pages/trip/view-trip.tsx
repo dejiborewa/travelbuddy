@@ -2,13 +2,14 @@ import { Icon } from "@iconify/react";
 import { useRouter } from "next/router";
 import ImageList from "../../components/imageList/imageList";
 import MenuBar from "../../components/menubar/menubar";
+import TopVotes from "../../components/topVotes/topVotes";
 import TripDetails from "../../components/tripDetails/tripDetails";
 import { DateData } from "../../components/tripDetails/tripDetails.props";
 import Main from "../../layout/main/main";
 
 const ViewTrip = () => {
   const router = useRouter();
-  const role = "ADMIN" || "TRAVELBUDDY";
+  const location = "New York City";
 
   const dateData: DateData = {
     startDate: new Date().toDateString(),
@@ -27,44 +28,31 @@ const ViewTrip = () => {
                 className="text-2xl cursor-pointer "
                 onClick={() => router.back()}
               />
-              {role === "ADMIN" ? (
-                <span>Edit your Trip</span>
-              ) : (
-                <span>My Trip</span>
-              )}
-            </div>
-
-            <div className="relative z-10">
-              <Icon icon="ph:trash-bold" className="text-3xl cursor-pointer" />
+              <span className="text-[18px]">My Trip</span>
             </div>
           </div>
         }
         dateData={dateData}
-        editable={true}
-      />
-      <section>
-        <h1>Travel buddies</h1>
-        <ImageList />
-        <div>
-          <h1>Your trip top votes</h1>
-          {role === "ADMIN" ? (
-            <span className="text-xs leading-4 block mt-2">
-              You have no places selected for your trip, create voting to know
-              what your travel buddies think
-            </span>
-          ) : (
-            <span className="text-xs leading-4 block mt-2">
-              Your travel buddies voted for it, it is your turn now{" "}
-            </span>
-          )}
-
-          <div className="flex items-center px-4 py-3 bg-[#FFFDFB] rounded-[16px] justify-between w-full shadow-yetAnotherGrey my-4">
-            <span className="w-1/2">Itinerary voting</span>
-
-            <button className="w-1/2 bg-primary border-0 outline-0 p-4 font-mukta text-white rounded-[12px] text-base hover:bg-btnHover active:bg-btnHover">
-              Launch now
-            </button>
+        locationPlaceholder={
+          <div className="flex items-center gap-4">
+            <Icon
+              icon="material-symbols:location-on-rounded"
+              className="text-3xl"
+            />
+            <span>{location}</span>
           </div>
+        }
+        editable={false}
+      />
+      <section className="mt-6">
+        <h1 className="text-[18px]">Travel buddies</h1>
+        <ImageList editable={false} />
+        <div>
+          <h1 className="text-[18px]">Your trip top votes</h1>
+          <span className="text-xs leading-4 block mt-1">
+            Your travel buddies voted for it, it is your turn now{" "}
+          </span>
+          <TopVotes />
         </div>
       </section>
       <div className="-mx-[1.5em] absolute bottom-0 w-full">

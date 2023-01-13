@@ -17,6 +17,7 @@ interface TripDetailsType {
   dateData: DateData;
   location?: null | Option;
   setLocation?: (value: SingleValue<Option>) => void;
+  locationPlaceholder: ReactNode;
 }
 
 export default TripDetailsType;

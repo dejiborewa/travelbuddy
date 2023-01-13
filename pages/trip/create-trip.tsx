@@ -1,11 +1,11 @@
 import { Icon } from "@iconify/react";
 import { useRouter } from "next/router";
 import { ChangeEvent, FormEvent, useState } from "react";
-import Button from "../components/buttons/button";
-import { Option } from "../components/dropdown/dropdown.props";
-import MenuBar from "../components/menubar/menubar";
-import TripDetails from "../components/tripDetails/tripDetails";
-import Main from "../layout/main/main";
+import Button from "../../components/buttons/button";
+import { Option } from "../../components/dropdown/dropdown.props";
+import MenuBar from "../../components/menubar/menubar";
+import TripDetails from "../../components/tripDetails/tripDetails";
+import Main from "../../layout/main/main";
 
 const CreateTrip = () => {
   const [dateData, setDateData] = useState({
@@ -46,10 +46,10 @@ const CreateTrip = () => {
           <div className="flex items-center gap-2">
             <Icon
               icon="ion:arrow-back-sharp"
-              className="text-2xl cursor-pointer"
+              className="text-3xl cursor-pointer"
               onClick={() => router.back()}
             />
-            <span>Create new Trip</span>
+            <span className="text-[18px]">Create new Trip</span>
           </div>
         }
         handleSubmit={handleSubmit}
@@ -57,8 +57,13 @@ const CreateTrip = () => {
         marginTop="mt-12"
         dateData={dateData}
         location={location}
+        locationPlaceholder={
+          <span className="mx-auto flex items-center">
+            Where are you travelling?
+          </span>
+        }
         setLocation={setLocation}
-        editable={false}
+        editable={true}
       >
         <div className="-mx-[1.5em] absolute bottom-0 w-full">
           <div className="m-[1.5em]">

@@ -11,6 +11,10 @@
   font-stretch: 75% 125%;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-family: 'Hubot Sans', serif;
 }
@@ -19,7 +23,6 @@ body {
   margin: 0;
   padding: 0;
   background: #E1E2E2; 
-  box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
