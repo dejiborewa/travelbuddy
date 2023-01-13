@@ -26,11 +26,6 @@ const Congrats = () => {
     if (auth.token) router.push("/onboarding/1");
   }, [auth.token, router]);
 
-  // function handleLogout() {
-  //   localStorage.removeItem("token");
-  //   dispatch(unsetUser());
-  // }
-
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     dispatch(register({ userName, email }));

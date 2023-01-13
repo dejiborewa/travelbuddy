@@ -8,7 +8,6 @@ import store from "../redux";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Component {...pageProps} />
       <Provider store={store}>
         <ToastContainer
           position="top-right"
